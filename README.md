@@ -12,54 +12,16 @@ The source dataset ships intentionally as one wide, imperfect CSV file, designed
 
 Every query was written and debugged by hand in DB Browser for SQLite — no ORM, no pandas, no AI-generated queries copy-pasted without understanding them.
 
-## Entity-Relationship Diagram
+
+    ## Entity-Relationship Diagram
 
 ```mermaid
 erDiagram
-    DEPARTMENTS ||--o{ EMPLOYMENT_RECORDS : "employs in"
-    POSITIONS ||--o{ EMPLOYMENT_RECORDS : "holds"
-    MANAGERS ||--o{ EMPLOYMENT_RECORDS : "supervises"
-    EMPLOYEES ||--|| EMPLOYMENT_RECORDS : "has"
-    EMPLOYEES ||--|| PERFORMANCE_RECORDS : "has"
-
-    EMPLOYEES {
-        int emp_id PK
-        string employee_name
-        date dob
-        string sex
-        string marital_desc
-        string race_desc
-        string state
-        string zip
-    }
-    EMPLOYMENT_RECORDS {
-        int emp_id PK_FK
-        date date_of_hire
-        date date_of_termination
-        string employment_status
-        string department_name FK
-        string position_name FK
-        real salary
-        int manager_id FK
-        string recruitment_source
-    }
-    PERFORMANCE_RECORDS {
-        int emp_id PK_FK
-        string performance_score
-        real engagement_survey
-        int emp_satisfaction
-        int absences
-    }
-    DEPARTMENTS {
-        string department_name PK
-    }
-    POSITIONS {
-        string position_name PK
-    }
-    MANAGERS {
-        int manager_id PK
-        string manager_name
-    }
+    DEPARTMENTS ||--o{ EMPLOYMENT_RECORDS : employs
+    POSITIONS ||--o{ EMPLOYMENT_RECORDS : holds
+    MANAGERS ||--o{ EMPLOYMENT_RECORDS : supervises
+    EMPLOYEES ||--|| EMPLOYMENT_RECORDS : has
+    EMPLOYEES ||--|| PERFORMANCE_RECORDS : has
 ```
 
 **Note:** managers do not have their own employee record in this dataset — `manager_id` never matches an `emp_id`, and no manager's name appears as an `employee_name`. Verified empirically before designing the schema, so the `managers` table is intentionally standalone.
