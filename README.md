@@ -97,11 +97,33 @@ Columns kept as clean binary flags (`MarriedID`, `Termd`, `FromDiversityJobFairI
 
 ## Key Findings
 
-1. **Diversity Job Fair recruits are 100% non-white** (29/29), while Employee Referral recruits are only 19.4% non-white — the lowest of any channel. Referral-based hiring appears to reduce organizational diversity here.
-2. **Termination rate correlates strongly with performance score**: 55.6% for "Needs Improvement" vs. 21.6% for "Exceeds".
-3. **Production has both the highest headcount (209) and the highest termination rate** (39.7%).
-4. Manager-level PIP rates range from 0% to 18.2% across managers with 10+ reports — suggesting inconsistent rating standards, genuine team differences, or both; this dataset alone can't distinguish which.
-5. A possible gender pay gap appears in a few positions (e.g. Network Engineer: $68,225 vs $51,675), but sample sizes are too small (n = 2–5) for statistical confidence — flagged for further analysis rather than treated as a conclusion.
+1. **Diversity Job Fair recruits are 100% non-white** (29/29), while Employee Referral
+   recruits are only 19.4% non-white — the lowest of any channel. Referral-based hiring
+   appears to reduce organizational diversity here.
+
+   ![Diversity by recruitment source](images/diversity_by_source.png)
+
+2. **Termination rate correlates strongly with performance score**: 55.6% for
+   "Needs Improvement" vs. 21.6% for "Exceeds".
+
+   ![Termination rate by performance score](images/termination_by_performance.png)
+
+3. **Production has both the highest headcount (209) and the highest termination rate**
+   (39.7%).
+
+   ![Department headcount and turnover](images/department_overview.png)
+
+4. Manager-level PIP rates range from 0% to 18.2% across managers with 10+ reports —
+   suggesting inconsistent rating standards, genuine team differences, or both; this
+   dataset alone can't distinguish which.
+
+   ![PIP rate by manager](images/pip_rate_by_manager.png)
+
+5. A possible gender pay gap appears in a few positions (e.g. Network Engineer: $68,225
+   vs $51,675), but sample sizes are too small (n = 2–5) for statistical confidence —
+   flagged for further analysis rather than treated as a conclusion.
+
+   ![Salary comparison by position and gender](images/pay_gap_by_position.png)
 
 ## Limitations
 
